@@ -59,7 +59,7 @@ class PureChat extends PluginBase
 
             $this->fixOldConfig();
         }
-
+        $this->fac = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
         $this->purePerms = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
     }
     
@@ -463,10 +463,10 @@ class PureChat extends PluginBase
             $string = str_replace("{msg}", $this->stripColors($message), $string);
         }
 
-        if($this->factionsAPI !== null)
+        if($this->fac !== null)
         {
-            $string = str_replace("{fac_name}", $this->factionsAPI->getPlayerFaction($player), $string);
-            $string = str_replace("{fac_rank}", $this->factionsAPI->getPlayerRank($player), $string);
+            $string = str_replace("{fac_name}", $this->fac->getPlayerFaction($player), $string);
+          //  $string = str_replace("{fac_rank}", $this->facAPI->getPlayerRank($player), $string);
         }
         else
         {
