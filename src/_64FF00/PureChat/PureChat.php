@@ -464,7 +464,7 @@ class PureChat extends PluginBase
         }
 
 
-            $string = str_replace("{fac_name}", $this->fac->getPlayerFaction($player), $string);
+            $string = str_replace("{fac_name}", $this->fac->getPlayerFaction($player->getName()), $string);
 
 
         $string = str_replace("{world}", ($levelName === null ? "" : $levelName), $string);
