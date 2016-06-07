@@ -463,16 +463,9 @@ class PureChat extends PluginBase
             $string = str_replace("{msg}", $this->stripColors($message), $string);
         }
 
-        if($this->fac !== null)
-        {
+
             $string = str_replace("{fac_name}", $this->fac->getPlayerFaction($player), $string);
-          //  $string = str_replace("{fac_rank}", $this->facAPI->getPlayerRank($player), $string);
-        }
-        else
-        {
-            $string = str_replace("{fac_name}", '', $string);
-            $string = str_replace("{fac_rank}", '', $string);
-        }
+
 
         $string = str_replace("{world}", ($levelName === null ? "" : $levelName), $string);
 
